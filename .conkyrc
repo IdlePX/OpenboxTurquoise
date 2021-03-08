@@ -1,0 +1,62 @@
+conky.config = {
+  background = true,
+  update_interval = 1,
+  short_units = true,
+
+  -- Window
+  own_window = false,
+  own_window_class = 'conky',
+  own_window_type = 'normal',
+  own_window_argb_visual = true,
+  own_window_argb_value = 255,
+  own_window_transparent = true,
+  own_window_hints = 'undecorated, below, sticky, skip_taskbar, skip_pager',
+  maximum_width = 3840,
+  minimum_width = 3840,
+  draw_blended = false,
+  double_buffer = yes,
+
+  -- Text
+  double_buffer = true,
+  use_xft = true,
+  xftalpha = 0.1,
+  alignment = 'bottom_middle',
+  draw_outline = false,
+  draw_borders = false,
+  draw_shades = false,
+  uppercase = true,
+
+  -- Fonts and Colours
+  font = 'Roboto:medium:size=10',
+  default_color = 'BABDB6',   -- Tasman
+  color0 = '888a85',          -- Gunsmoke
+  color1 = 'F57900',          -- Tangerine
+  color2 = 'E9B96E',          -- Dark Goldenrod
+  color3 = '73D216',          -- Lima
+  color4 = '729FCF',          -- Jordy Blue
+  color5 = 'AD7FA8',          -- London Hue
+  color6 = 'EEEEEC',          -- Sugar Cane
+}
+
+conky.text = [[
+
+${alignc} \
+${color3}I am $color ${user_names}  ${color0}—  \
+${color6}Do we have geckos? $color ${distribution}  ${color0}—  \
+${color2}Colonol $color ${kernel}   ${color0}—  \
+${color4}You are here $color ${desktop_name} ${color0}—  \
+${color5}Noodles up $color ${downspeedf}  ${color0}—   \
+${color0}Poodles down $color ${upspeedf}  ${color0}—   \
+${color1}Sponsored by Acurist $color${utime %d-%m-%G %H:%M:%S  } 
+
+${alignc} \
+${color3}Hosted by $color ${nodename_short}  ${color0}—  \
+${color6}Keeping it up since $color $uptime  ${color0}—  \
+${color2}Ryzen love $color ${cpubar cpu0 6, 30} ${offset 5}${cpu}%  ${color0}—  \
+${color4}All the ram $color ${membar 6, 30} $color $mem / $memmax  ${color0}—  \
+${color5}Speedy NVME $color ${fs_bar 6, 60 /}  ${fs_used /} / ${fs_size /}  ${color0}—  \
+${color0}Swap meet $color ${swapbar 6, 60 /}  ${swap} / ${swapmax}  ${color0}—  \
+${color1}IP $color ${addr eno1} ${color0}(${color1}Public${color} ${execi 3600 curl http://ipecho.net/plain}${color0})
+
+]]
+

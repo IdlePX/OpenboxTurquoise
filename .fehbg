@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/idle/.config/wallpapers/CapriMagic.png' 
